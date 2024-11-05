@@ -130,6 +130,7 @@ int main() {
     today.year = 21;  // Valid year
 
     printf("Date: %d/%d/%d\n", today.day, today.month, today.year);
+    printf("Size of Date structure: %zu bytes\n", sizeof(struct Date));
 
 
     printf("Size of Padded structure: %zu bytes\n", sizeof(struct Padded));

@@ -26,15 +26,20 @@ void printarr2(int* arr,int n){
     cout<<endl;
 }
 
+void myFunc()
+{
+  cout << "Inside myFunc" << endl;
+}
+
 int main()
 {
 
-    int a1[4] = {4, 5, 6, 7};
-    printarr(a1,4);
-    printarr2(a1,4);
-    for (int i = 0; i < 4; i++) {
-        cout << a1[i] << endl;
-    }
+    // int a1[4] = {4, 5, 6, 7};
+    // printarr(a1,4);
+    // printarr2(a1,4);
+    // for (int i = 0; i < 4; i++) {
+    //     cout << a1[i] << endl;
+    // }
     
 // Feature	malloc	calloc
 // Memory Initialization	Uninitialized (garbage values)	Initialized to zero
@@ -106,6 +111,37 @@ int main()
     // swap(&x, &y);
     // printf("%d %d\n", x, y);
 
+
+    #ifdef NDEBUG
+    cout << "Inside DEBUG"<<endl;
+    #endif
+    // int a[3] = {1, 2, 3};
+
+    // int* p = a;
+
+    // cout << p << " " << *p << endl;
+    // ++p;
+    // cout << p << " " << *p << endl;
+
+
+    int a2[3][3] = { {1, 2, 3}, { 11, 22, 33 }, { 17, 28, 39 } };
+    // int a2[3][3][2] = { {{1, 2}, { 3, 4}, { 5, 6}},{{11, 22}, { 33, 44}, { 55, 66}},{{101, 102}, { 103, 104 }, { 105, 106 } }};
+    cout<<&a2[1]<<endl;
+    // cout << a2[2][2][1] << endl;     //*(*(*(a2 + 2) + 2) + 1)
+    // int* p1 = a2[0];
+    // cout<<*p1<<endl;
+    // cout << a2[2][1] << endl;
+    // cout << *(*(*(a2 + 2) + 2)+1) << endl;
+
+    // int a[]={1,2,3};
+    // int a[2][2] = { {1,2},{3,4} };
+    // int* p = a+2;
+    // cout<<*p<<endl;
+
+
+    int(*p) = a2[0];
+
+    // cout <<*(*(p+2)+2);
 
 
     return 0;

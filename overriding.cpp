@@ -69,7 +69,7 @@ int main(){
     sizeof(B) = 12 bytes (due to padding)
     sizeof(C) = 16 bytes
     */
-    delete ptr1;
+    // delete ptr1;
     delete ptr2;
     delete ptr3;
     return 0;

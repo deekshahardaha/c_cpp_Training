@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+int main78() {
     // 1. Declaration and Initialization
     vector<int> vec = {5, 2, 8, 1, 3};
 

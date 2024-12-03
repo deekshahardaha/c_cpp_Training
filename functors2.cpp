@@ -64,7 +64,7 @@ public:
     }
 };
 
-int main() {
+int main20() {
     int x = 10;
     int y = 5;
 

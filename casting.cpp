@@ -13,31 +13,31 @@ public:
     void show() override { cout << "Derived class" << endl; }
 };
 
-int main() {
+int main4() {
 
     double a = 10.5;
     int b = (int)a; // C-style cast
-    cout << "C-style cast: " << b << endl; // Output: 10
+    cout << "C-style cast: " << b << endl; 
 
     // Static casting
     Base* basePtr = new Derived(); // Upcasting (from Derived to Base) 
     Derived* derivedPtr = static_cast<Derived*>(basePtr); // Downcasting  (from Base to Derived)
-    derivedPtr->show(); // Output: Derived class
+    derivedPtr->show();
 
     // Const casting
     const int x = 42;
     const int* constPtr = &x;
     int* modifiablePtr = const_cast<int*>(constPtr); // Remove constness
     *modifiablePtr ++; // Undefined behavior, but for demonstration
-    cout << "Const cast (undefined behavior): " << x << endl; // Output may vary
+    cout << "Const cast (undefined behavior): " << x << endl; 
 
     // Dynamic casting
-    Base* basePtr2 = new Base(); // Base class object
+    Base* basePtr2 = new Base(); 
     Derived* derivedPtr2 = dynamic_cast<Derived*>(basePtr2); // Attempt to downcast
     if (derivedPtr2) {
         derivedPtr2->show(); // This won't execute
     } else {
-        cout << "Dynamic cast failed: basePtr2 is not a Derived object." << endl; // Output this line
+        cout << "Dynamic cast failed: basePtr2 is not a Derived object." << endl;
     }
 
     // Reinterpret casting

@@ -13,7 +13,7 @@ void myfun(){
     }
     delete ptr;
 }
-int main(){
+int main31(){
     
     myfun();
     myfun();

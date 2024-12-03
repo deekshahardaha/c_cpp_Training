@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main(){
+int main23(){
     // without space 
     // string name;
     // cin>>name;

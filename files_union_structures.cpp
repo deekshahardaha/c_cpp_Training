@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
-
+#include <string.h>
 
 // Structures are used to group related data together, allowing access to all members simultaneously.
 // Unions are used to save memory by allowing different data types to share the same memory
@@ -17,13 +16,11 @@ struct Student {
     float grade;
 };
 
-
 struct Date {
     unsigned int day : 5;  // 5 bits for day (0-31)
     unsigned int month : 4; // 4 bits for month (0-15)
     unsigned int year : 7;  // 7 bits for year (0-127)
 };
-
 
 struct Padded {
     char a;      // 1 byte
@@ -38,8 +35,8 @@ struct Unpadded {
 };
 
 /*
-#pragma pack: Allows to control the alignment of structure members, 
-reducing padding and potentially saving memory. 
+#pragma pack: Allows to control the alignment of structure members,
+reducing padding and potentially saving memory.
 Setting Packing: The #pragma pack(push, 1) directive sets the alignment to 1 byte, meaning no padding will be added between members of the structure.
 
 Defining a Packed Structure: The struct Packed is defined with a char, an int, and another char. With 1-byte packing, the total size will be 6 bytes (1 + 4 + 1).
@@ -58,37 +55,35 @@ struct Packed {
 
 #pragma pack(pop) // Restore previous alignment
 
-
-
-int main() {
-    FILE *file;
+int main17() {
+    FILE* file;
     int num;
 
-    file = fopen("numbers.txt", "w");
-    if (file == NULL) {
-        printf("Error: Unable to open file.\n");
+    // Use fopen_s to open the file for writing
+    if (fopen_s(&file, "numbers.txt", "w") != 0) {
+        printf("Error: Unable to open file for writing.\n");
         return 1;
     }
 
     for (int i = 0; i < 10; i++) {
-        fprintf(file, "%d\n", i * i);
+        fprintf_s(file, "%d\n", i * i); // Use fprintf_s for safer file output
     }
 
     fclose(file);
 
-    file = fopen("numbers.txt", "r");
-    if (file == NULL) {
-        printf("Error: Unable to open file.\n");
+    // Use fopen_s to open the file for reading
+    if (fopen_s(&file, "numbers.txt", "r") != 0) {
+        printf("Error: Unable to open file for reading.\n");
         return 1;
     }
 
-    while (fscanf(file, "%d", &num) != EOF) {
+    while (fscanf_s(file, "%d", &num) == 1) { // Use fscanf_s for safer input
         printf("%d\n", num);
     }
 
     fclose(file);
 
-    /* 
+    /*
     "r"	Read mode(file must exist).
     "w"	Write mode(truncates existing file or creates new).
     "a"	Append mode(creates new file if it doesn't exist).
@@ -96,7 +91,6 @@ int main() {
     "w+" Write and read mode(truncates existing file or creates new).
     "a+" Append and read mode(creates new file if it doesn't exist).
     */
-
 
     union Data data;
 
@@ -111,17 +105,15 @@ int main() {
 
     printf("data.i: %d\n", data.i);
 
-
     struct Student student1;
 
     // Assign values to the members
     student1.id = 1;
-    strcpy(student1.name, "Alice");
+    strcpy_s(student1.name, sizeof(student1.name), "Alice"); // Use strcpy_s for safer string copy
     student1.grade = 85.5;
     printf("Student ID: %d\n", student1.id);
     printf("Student Name: %s\n", student1.name);
     printf("Student Grade: %.2f\n", student1.grade);
-
 
     struct Date today;
 
@@ -129,13 +121,11 @@ int main() {
     today.month = 8;  // Valid month
     today.year = 21;  // Valid year
 
-    printf("Date: %d/%d/%d\n", today.day, today.month, today.year);
+    printf("Date: %d/%d/%d\n ", today.day, today.month, today.year);
     printf("Size of Date structure: %zu bytes\n", sizeof(struct Date));
-
 
     printf("Size of Padded structure: %zu bytes\n", sizeof(struct Padded));
     printf("Size of Unpadded structure: %zu bytes\n", sizeof(struct Unpadded));
-    
 
     printf("Size of Packed structure: %zu bytes\n", sizeof(struct Packed));
 

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main() {
+int main35() {
     // Create a multimap of string keys and integer values
     multimap<string, int> myMultimap;
 

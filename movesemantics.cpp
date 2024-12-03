@@ -82,7 +82,7 @@ A fun(A& x) {
     return y; 
 }
 
-int main() {
+int main34() {
     A o1; 
     // A o2 = move(o1); // Move constructor
     // A o4(o2); // Copy constructor

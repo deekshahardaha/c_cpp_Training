@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include<cstring> ///for strcpy
+#include <cstring> ///for strcpy
 
 using namespace std;
 
@@ -13,12 +13,12 @@ void swapfun(string& a, int& b) {
 
 // Function to swap string and char[]
 void swapfun(string& a, char b[]) {
-    string temp = a; 
-    a = b;
-    strcpy(b, temp.c_str()); 
+    string temp = a;
+    a = string(b);
+    strcpy_s(b, 100, temp.c_str());
 }
 
-int main() {
+int main67() {
 
     int a=5;
     string s=to_string(a); 

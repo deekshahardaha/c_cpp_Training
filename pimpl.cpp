@@ -8,10 +8,10 @@ using namespace std;
 class MyClassImpl;
 
 // Interface class
-class MyClass {
+class MyClassD {
 public:
-    MyClass(); 
-    ~MyClass(); 
+    MyClassD(); 
+    ~MyClassD(); 
 
     void setName(const string& name);
     string getName() const;
@@ -27,22 +27,22 @@ public:
 };
 
 // Constructor
-MyClass::MyClass() : pImpl(make_unique<MyClassImpl>()) {}
+MyClassD::MyClassD() : pImpl(make_unique<MyClassImpl>()) {}
 
 // Destructor
-MyClass::~MyClass() = default; 
+MyClassD::~MyClassD() = default; 
 
 
-void MyClass::setName(const string& name) {
+void MyClassD::setName(const string& name) {
     pImpl->name = name;
 }
 
-string MyClass::getName() const {
+string MyClassD::getName() const {
     return pImpl->name;
 }
 
-int main() {
-    MyClass myObject;
+int main45() {
+    MyClassD myObject;
     myObject.setName("JKHKIUHJ");
     cout << "Name: " << myObject.getName() << endl;
     return 0;

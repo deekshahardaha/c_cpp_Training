@@ -51,7 +51,7 @@ public:
     }
 };
 
-int main() {
+int main40() {
     Complex c1(3.0, 4.0);
     Complex c2(1.0, 2.0);
     Complex c3(1.0, 2.0);

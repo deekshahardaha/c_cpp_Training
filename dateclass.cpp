@@ -108,7 +108,7 @@ public:
     }
 };
 
-int main() {
+int main9() {
     try {
         Date dt(2024, 11, 30);
         dt.print();

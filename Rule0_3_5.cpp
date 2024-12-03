@@ -122,7 +122,7 @@ public:
     }
 };
 
-int main() {
+int main55() {
     // Demonstrating Rule of Zero
     RuleOfZero zero;
     zero.display();

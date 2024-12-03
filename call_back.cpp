@@ -37,7 +37,7 @@ void anotherfun(int val,void (*fu)(int) ){
 	fu(val);
 }
 
-int main()
+int main3()
 {
     int ggg = 54;
 	anotherfun(ggg,sqr2);
@@ -50,27 +50,33 @@ int main()
     int a[]{4, 5, 3, 56, 5, 23, 5};
 
     callthisfun(a, 7, com);
+    cout<<"after com : ";
 	for (int i = 0; i < 7; i++)
     {
         cout << a[i] << " ";
     }
     cout << endl;
 
-	callthisfun(a, 7, compare);
+    int a1[]{4, 5, 3, 56, 5, 23, 5};
+
+	callthisfun(a1, 7, compare);
+    cout<<"after compare : ";
 	for (int i = 0; i < 7; i++)
     {
-        cout << a[i] << " ";
+        cout << a1[i] << " ";
     }
     cout << endl;
 
-    callthisfun(a, 7, [](int a, int b) -> bool
+    int a2[]{4, 5, 3, 56, 5, 23, 5};
+
+    callthisfun(a2, 7, [](int a, int b) -> bool
                 {
                     return a > b;
                 });
-    
+    cout<<"after inline : ";
     for (int i = 0; i < 7; i++)
     {
-        cout << a[i] << " ";
+        cout << a2[i] << " ";
     }
     cout << endl;
 

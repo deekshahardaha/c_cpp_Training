@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main69() {
     int day = 3;
     // Never use expression inside switch().
     switch (day) {

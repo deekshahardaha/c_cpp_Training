@@ -23,7 +23,7 @@ static bool compa(int a, int b)
 	return a < b;
 }
 
-void main()
+void main19()
 {
 
 	vector <int> v{ 239,54,21445,32923 };

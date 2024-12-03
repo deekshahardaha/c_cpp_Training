@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int main30()
 {
 
   map<int, char> myMap{ {1,'a'}, {2,'b'}, {3, 'c'}};

@@ -44,7 +44,7 @@ public:
         cout<<"B fun4()"<<endl;
     }
 };
-int main(){
+int main42(){
 
 
     A a;

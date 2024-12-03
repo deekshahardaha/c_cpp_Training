@@ -36,7 +36,7 @@ private:
     MyTuple<Rest...> rest; // Recursive definition
 };
 
-int main() {
+int main77() {
     // Create a MyTuple with different types
     MyTuple<int, double, string> myTuple(42, 3.14, "Hello, World!");
 

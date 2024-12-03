@@ -3,9 +3,9 @@
 #include <string.h>
 #include <time.h>
 
-int main() {
-    //malloc to allocate memory for an array of integers
-    int *arr = (int *)malloc(5 * sizeof(int)); 
+int main32() {
+    // malloc to allocate memory for an array of integers
+    int* arr = (int*)malloc(5 * sizeof(int));
     if (arr == NULL) {
         perror("Failed to allocate memory using malloc");
         return 1;
@@ -13,7 +13,7 @@ int main() {
 
     // Initialize the array
     for (int i = 0; i < 5; i++) {
-        arr[i] = i + 1; 
+        arr[i] = i + 1;
     }
 
     // Print the initial array
@@ -23,8 +23,8 @@ int main() {
     }
     printf("\n");
 
-    //calloc to allocate memory for another array
-    int *arr_calloc = (int *)calloc(5, sizeof(int)); 
+    // calloc to allocate memory for another array
+    int* arr_calloc = (int*)calloc(5, sizeof(int));
     if (arr_calloc == NULL) {
         perror("Failed to allocate memory using calloc");
         free(arr); // Free previously allocated memory
@@ -34,12 +34,12 @@ int main() {
     // Print the calloc array
     printf("Array after calloc: ");
     for (int i = 0; i < 5; i++) {
-        printf("%d ", arr_calloc[i]); 
+        printf("%d ", arr_calloc[i]);
     }
     printf("\n");
 
-    //realloc to resize the first array
-    arr = (int *)realloc(arr, 10 * sizeof(int)); // Resize to hold 10 integers
+    // realloc to resize the first array
+    arr = (int*)realloc(arr, 10 * sizeof(int)); // Resize to hold 10 integers
     if (arr == NULL) {
         perror("Failed to reallocate memory using realloc");
         free(arr_calloc); // Free calloc memory
@@ -58,7 +58,7 @@ int main() {
     }
     printf("\n");
 
-    //memcpy to copy data from one array to another
+    // memcpy to copy data from one array to another
     int arr_copy[10];
     memcpy(arr_copy, arr, 10 * sizeof(int)); // Copy the contents of arr to arr_copy
 
@@ -69,7 +69,7 @@ int main() {
     }
     printf("\n");
 
-    //memset to set the first 5 elements of arr_copy to 0
+    // memset to set the first 5 elements of arr_copy to 0
     memset(arr_copy, 0, 5 * sizeof(int)); // Set first 5 elements to 0
 
     // Print the modified copied array
@@ -83,7 +83,6 @@ int main() {
     free(arr);
     free(arr_calloc);
 
-
     // time() to get the current time
     time_t current_time;
     current_time = time(NULL); // Get the current time
@@ -93,29 +92,34 @@ int main() {
     }
     printf("Current time in seconds since the Epoch: %ld\n", current_time);
 
-    //localtime() to convert time_t to struct tm
-    struct tm *local_time;
-    local_time = localtime(&current_time); // Convert to local time
-    if (local_time == NULL) {
+    // localtime_s() to convert time_t to struct tm
+    struct tm local_time;
+    if (localtime_s(&local_time, &current_time) != 0) { // Convert to local time
         perror("Failed to convert time to local time");
         return 1;
     }
-    printf("Local time: %s", asctime(local_time)); 
+    char time_string[26];
+    if (asctime_s(time_string, sizeof(time_string), &local_time) != 0) { // Convert struct tm to string
+        perror("Failed to convert time to string");
+        return 1;
+    }
+    printf("Local time: %s", time_string);
 
     // strftime() to format the time
     char buffer[80];
-    if (strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", local_time) == 0) {
+    if (strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", &local_time) == 0) {
         perror("strftime failed");
         return 1;
     }
     printf("Formatted local time: %s\n", buffer);
 
     // perror() to display error messages
-    FILE *file = fopen("non_existent_file.txt", "r"); // Attempt to open a non-existent file
-    if (file == NULL) {
+    FILE* file;
+    if (fopen_s(&file, "non_existent_file.txt", "r") != 0) {
         perror("Error opening file");
         // The error message will be printed to stderr
-    } else {
+    }
+    else {
         fclose(file); // Close the file if it was opened successfully
     }
 

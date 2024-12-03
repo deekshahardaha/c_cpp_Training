@@ -46,7 +46,7 @@ private:
     int* data;
 };
 
-void BasicGuarantee() {
+void BasicGuaranteeS() {
     DynamicArray arr(5);
     try {
         arr.setValue(10, 100); // This will throw an exception
@@ -56,7 +56,7 @@ void BasicGuarantee() {
     arr.print(); // The array remains in a valid state
 }
 
-void StrongGuarantee() {
+void StrongGuaranteeS() {
     DynamicArray arr1(5);
     DynamicArray arr2(5);
     // arr1.setValue(0, 1);
@@ -73,21 +73,21 @@ void StrongGuarantee() {
     arr2.print(); // arr2 should reflect the state of arr1 before modification
 }
 
-void Noexcept() noexcept {
+void NoexceptS() noexcept {
     // This function is marked noexcept, so it should not throw
     throw runtime_error("tried something");
     cout << "This function is noexcept and will not throw." << endl;
 }
 
-int main() {
+int main15() {
     cout << " Basic Guarantee:" << endl;
-    BasicGuarantee();
+    BasicGuaranteeS();
 
     cout << "Strong Guarantee:" << endl;
-    StrongGuarantee();
+    StrongGuaranteeS();
 
     cout << " Noexcept:" << endl;
-    Noexcept(); // This function should not throw
+    NoexceptS(); // This function should not throw
     cout<<"No exception thrown by no except"<<endl;
 
     return 0;

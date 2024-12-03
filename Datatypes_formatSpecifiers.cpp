@@ -6,7 +6,7 @@
 
 
 int p=10;
-int main()
+int main8()
 {
     int h=p;
 

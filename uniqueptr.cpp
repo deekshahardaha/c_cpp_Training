@@ -16,7 +16,7 @@ public:
     }
 };
 
-int main() {
+int main74() {
     unique_ptr<UniqueExample> uniquePtr = make_unique<UniqueExample>();
     uniquePtr->display();
 

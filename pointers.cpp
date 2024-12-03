@@ -31,7 +31,7 @@ void myFunc()
   cout << "Inside myFunc" << endl;
 }
 
-int main()
+int main46()
 {
 
     // int a1[4] = {4, 5, 6, 7};

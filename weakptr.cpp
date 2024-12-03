@@ -34,7 +34,7 @@ public:
 
 };
  
-int main() {
+int main79() {
 
     shared_ptr<A> a = make_shared<A>();
     cout<< "A var : "<<a->varA<<endl;

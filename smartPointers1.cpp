@@ -53,7 +53,7 @@ class Teacher{
 };
 
 
-int main(){
+int main61(){
 
     //  auto_ptr  depricated
     // auto_ptr<int> ptr(new int); // int *ptr=new int;  

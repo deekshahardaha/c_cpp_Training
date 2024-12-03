@@ -99,7 +99,7 @@ public:
     }
 };
 
-int main() {
+int main11() {
     DoublyLinkedList<int> intList; // Create a doubly linked list for integers
     intList.insertBack(10);
     intList.insertBack(20);

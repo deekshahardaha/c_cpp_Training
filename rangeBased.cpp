@@ -6,7 +6,7 @@
 using namespace std;
  
  
-int main(){
+int main54(){
 
 	multimap<int,int> mm;
  
@@ -59,6 +59,8 @@ int main(){
 		cout<<*itt<<endl;
 
 	}
+
+	return 0;
  
 }
  

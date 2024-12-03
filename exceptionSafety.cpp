@@ -60,7 +60,7 @@ void Noexcept() noexcept {
     cout << "This function is noexcept and will not throw." << endl;
 }
 
-int main() {
+int main14() {
     cout << "Basic Guarantee:" << endl;
     BasicGuarantee();
 

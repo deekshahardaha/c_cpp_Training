@@ -9,28 +9,28 @@ emplace_back does not call any hence better to use.
 
 using namespace std;
 
-class MyClass {
+class MyClassS {
 public:
     string b;
-    MyClass( const string& b) :b(b) {
+    MyClassS( const string& b) :b(b) {
         cout << "MyClass constructed: "  << b << endl;
     }
-    MyClass(const MyClass &curr) :b(curr.b){
+    MyClassS(const MyClassS &curr) :b(curr.b){
         cout << "Copy constructed: " << b << endl;
     }
-    MyClass(MyClass &&curr):b(move(curr.b))  {
+    MyClassS(MyClassS &&curr):b(move(curr.b))  {
         cout << "Move constructed: " << b << endl;
     }
 
 };
 
-int main() {
-    vector<MyClass> vec;
+int main50() {
+    vector<MyClassS> vec;
 
     // Using push_back
-    MyClass obj1("Object1");
+    MyClassS obj1("Object1");
     vec.push_back(obj1);
-    vec.push_back(MyClass("obj5")); // Copies obj1 into the vector
+    vec.push_back(MyClassS("obj5")); // Copies obj1 into the vector
 
     // Using emplace_back
     vec.emplace_back("Object2"); // Constructs directly in the vector

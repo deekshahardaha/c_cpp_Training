@@ -25,7 +25,7 @@ public:
     }
 };
 
-int main() {
+int main70() {
     Box<int> intBox(123);
     cout << "Integer Box contains: " << intBox.getValue() << endl;
 

@@ -24,7 +24,7 @@ int sum(int count,...){
     return sss;
 }
 
-int main(){
+int main75(){
     int s;
     s=sum(3,99,45,2);
     cout<<s<<endl;

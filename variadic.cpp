@@ -12,7 +12,7 @@ T sum(T first, Args... args) {
     return first + sum(args...); 
 }
 
-int main() {
+int main76() {
     cout << "Sum of 1, 2, 3: " << sum(1, 2, 3) << endl; 
     cout << "Sum of 1.5, 2.5, 3.5: " << sum(1.5, 2.5, 3.5) << endl; 
     cout << "Sum of 'a', 'b', 'c': " << sum('a', 'b', 'c') << endl; 

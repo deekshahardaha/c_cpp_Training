@@ -28,7 +28,7 @@ public:
 
 int cl1::stval=33;
 
-int main() {
+int main72() {
     cl1 obj1(10);
     obj1.display();
     cl1 obj2(20);

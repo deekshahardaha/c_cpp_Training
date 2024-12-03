@@ -82,7 +82,7 @@ public:
     }
 };
 
-int main() {
+int main28() {
     LinkedList<int> intList; // Create a linked list for integers
     intList.insert(10);
     intList.insert(20);

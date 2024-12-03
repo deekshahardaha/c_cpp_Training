@@ -17,7 +17,7 @@ void swapfun(T& a, T& b) {
     b = temp;   
 }
 
-int main() {
+int main68() {
     // with integers
     int x = 5, y = 10;
     cout << "Before swap: x = " << x << ", y = " << y << endl;

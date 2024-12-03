@@ -36,7 +36,7 @@ public:
     }
 };
 
-int main() {
+int main49() {
     Shape* shape1 = new Square(5.0); 
     Shape* shape2 = new Rectangle(4.0, 6.0); 
 

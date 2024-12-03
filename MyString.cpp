@@ -122,7 +122,7 @@ public:
     }
 };
 
-int main() {
+int main38() {
     MyString str1;
     MyString str2("Hello");
     MyString str3(str2);

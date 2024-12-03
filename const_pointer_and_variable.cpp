@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main5(){
 
     // non-constant initialization
     int a = 33;

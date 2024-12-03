@@ -76,7 +76,7 @@ public:
     }
 };
 
-int main() {
+int main1() {
     cout << "Creating Derived3 object." << endl;
     Derived3 obj;
     cout << "Derived3 object created." << endl;

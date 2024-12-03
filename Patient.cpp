@@ -67,7 +67,7 @@ public:
 
 int CriticalCarePatient::criticalCareCount = 0;
 
-int main() {
+int main44() {
     int choice;
     do{
     cout << "\nPatient Management System\n";

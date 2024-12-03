@@ -27,7 +27,7 @@ void friendFunction(base& obj)
     cout << "Protected Variable: " << obj.protected_variable<<endl;
 }
 
-int main()
+int main18()
 {
     base object1;
     friendFunction(object1);

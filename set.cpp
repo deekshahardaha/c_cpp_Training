@@ -2,19 +2,20 @@
 #include<set>
 #include<vector>
 #include<list>
+#include <string>
 
 using namespace std;
 
-class MyClass {
+class MyClassS {
 public:
     string b;
-    MyClass( const string& b) :b(b) {
+    MyClassS( const string& b) :b(b) {
         cout << "MyClass constructed: "  << b << endl;
     }
-    MyClass(const MyClass &curr) :b(curr.b){
+    MyClassS(const MyClassS &curr) :b(curr.b){
         cout << "Copy constructed: " << b << endl;
     }
-    MyClass(MyClass &&curr):b(move(curr.b))  {
+    MyClassS(MyClassS &&curr):b(move(curr.b))  {
         cout << "Move constructed: " << b << endl;
     }
 
@@ -34,14 +35,14 @@ public:
   }
 };
 
-int main(){
+int main56(){
 
 // set<int, greater<>> mySet{1, 10, 30, 23 };
 set<int> mySet{1, 10, 30, 23 };
   set<int, Greater> mySet1;
 
 
-  vector<list<pair<int, MyClass>>> myData;
+  vector<list<pair<int, MyClassS>>> myData;
 //   auto x = function1();
  
    auto result =  mySet.insert(1);

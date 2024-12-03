@@ -17,7 +17,7 @@ public:
     }
 };
 
-int main() {
+int main58() {
     shared_ptr<SharedExample> sharedPtr1 = make_shared<SharedExample>(55);
     sharedPtr1->display();
     

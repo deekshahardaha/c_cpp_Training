@@ -35,7 +35,7 @@ public:
         cout<<"C fun()"<<endl;
     }
 };
-int main(){
+int main41(){
 
 
     A a;

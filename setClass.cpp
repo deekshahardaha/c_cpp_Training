@@ -24,7 +24,7 @@ public:
     }
 };
 
-int main() {
+int main57() {
     set<Person> people;
 
     // Adding people to the set

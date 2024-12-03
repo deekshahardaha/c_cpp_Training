@@ -75,7 +75,7 @@ void GetFun(Shape *ptr)
     cout<<ptr->Area()<<endl;
 }
  
-int main(){
+int main2(){
     Circle *pCircle=new Circle;
     Square *pSquare=new Square;
     Rect *pRect = new Rect;

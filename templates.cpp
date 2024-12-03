@@ -14,7 +14,7 @@ T maxfun(T a,T b){
 }
 
 
-int main(){
+int main71(){
     cout<<"max of 2 and 6 is : "<<maxfun(2,6)<<endl;
     cout<<"max of 2, 2.65 is : "<<maxfun(2.56,2)<<endl;
 

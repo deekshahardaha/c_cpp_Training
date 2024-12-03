@@ -5,7 +5,7 @@
 #include <cstdio> // For remove and rename functions
 using namespace std;
  
-int main() {
+int main65() {
     // Create and write to a text file
     ifstream inFile("output.txt"); // Open the file for reading
     if (inFile) {

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+int main43() {
     // Creating a pair
     pair<int, string> myPair; // A pair of an integer and a string
 
